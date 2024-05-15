@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      ="mongodb+srv://tinkugorita:Tinku28112003@cluster0.6rmdw6r.mongodb.net/estate"
+  url      = env("DATABASE_URL")
 }
 
 model Post {
