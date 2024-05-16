@@ -2,7 +2,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import cors from "cors";
-import express from "express";
+import express from "express";  
 import cookieParser from "cookie-parser";
 import authRoute from "./routes/auth.route.js";
 import testRoute from "./routes/test.route.js";
@@ -15,8 +15,8 @@ const port=process.env.PORT || 5000;
 const app=express();
 
 const corsOptions ={
-  // origin:'http://localhost:5173', 
-  origin:'https://realestate-client-zcfo.onrender.com/',
+  origin:'http://localhost:5173', 
+// origin:'https://realestate-client-zcfo.onrender.com/',
   credentials:true, 
 }  
 app.use(cookieParser());
