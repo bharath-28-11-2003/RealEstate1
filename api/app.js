@@ -9,13 +9,13 @@ import testRoute from "./routes/test.route.js";
 import userRoute from "./routes/user.route.js";
 import postRoute from "./routes/post.route.js";
 import chatRoute from "./routes/chat.route.js";
-
+import {app,server} from "./socket/app.js"
 import messageRoute from "./routes/message.route.js";
 
 
-const __dirname = path.resolve();
+
 const port=process.env.PORT || 5000;
-const app=express();
+// const app=express();
 
 const corsOptions ={
   origin:'http://localhost:5173', 
@@ -34,12 +34,19 @@ app.use("/api/posts",postRoute);
 app.use("/api/chats",chatRoute);
 app.use("/api/messages",messageRoute);
 
-app.use(express.static(path.join(__dirname, "/client/dist")));
+//code for deployment....
+if(process.env.NODE_ENV ==="production"){
+  const dirPath = path.resolve();
+
+  app.use(express.static("./client/dist"));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+	res.sendFile(path.resolve(dirPath,"./client/dist","index.html"));
 });
+}
 
-app.listen(port, () => {
+
+
+server.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });

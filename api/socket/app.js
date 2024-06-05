@@ -1,8 +1,13 @@
 import { Server } from "socket.io";
+import express from "express";
+import http from "http";
+const app=express();
 
-const io = new Server({
+const server =http.createServer(app);
+const io = new Server(server,{
   cors: {
     origin: "http://localhost:5173",
+    // origin:
   },
 });
 
@@ -48,4 +53,5 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen("4001");
+// io.listen("4001");
+export {app,io,server}
