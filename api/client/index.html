@@ -5,6 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuaM3-DsaNjKV3_Yc7T9xsIzGMr7FPXc2oCmylrGL5hQ&s" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bharath's Real Estate UI</title>
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <meta name="description" content="Buy, Sell and Rent Properties" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
