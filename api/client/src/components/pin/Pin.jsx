@@ -3,12 +3,13 @@ import { Popup } from 'react-leaflet'
 import { Marker } from 'react-leaflet'
 import { Link } from 'react-router-dom'
 import { Icon } from 'leaflet'
+import marker from ""
 
 import "./pin.scss";
 
 
 const myIcon = new Icon({
-  iconUrl: marker,
+  iconUrl: "/location.png",
   iconSize: [32,32]
  })
 const Pin = ({item}) => {
