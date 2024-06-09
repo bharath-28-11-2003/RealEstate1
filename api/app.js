@@ -18,7 +18,8 @@ const port=process.env.PORT || 5000;
 // const app=express();
 
 const corsOptions ={
-  origin:'http://localhost:5173', 
+  // origin:'http://localhost:5173', 
+  origin: "https://realestate1.onrender.com",
 // origin:'https://realestate-client-zcfo.onrender.com/',
   credentials:true, 
 }  
